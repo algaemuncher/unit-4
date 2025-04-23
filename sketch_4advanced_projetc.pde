@@ -1,14 +1,15 @@
-int i,j,x,y,r,cs1,cs2,cs3 = 0;
+int i,j,r,cs1,cs2,cs3 = 0;
 float f;
 void setup(){
   size(600,600);
   background(200);
   rectMode(CENTER);
   car(300,300);
-  //while(i<10){
-  //  car(int(random(600)),int(random(600)));
-  //  i = i+1;
-  //}
+  while(i<10){
+    car(int(random(600)),int(random(600)));
+    streetlight(int(random(600)), int(random(600)));
+    i = i+1;
+  }
   streetlight(150,400);
 }
 
@@ -93,13 +94,20 @@ void blindinglights(){
   noStroke();
   r = int(random(5));
   quad(-38,-120,-23,-120,-15+r,5,-58-r,5);
-  i = 0;
-  while(i<5){
+  j = 0;
+  while(j<5){
    fill(255,248,100,int(random(140,165)));
    circle(random(-40,-20),random(-80,-40),random(5,9));
-   i=i+1;
+   j=j+1;
   }
 }
+
+//void (int x,int y){
+//  pushMatrix();
+//  translate(x,y);
+  
+//  popMatrix();
+//}
 
 void draw(){
   rectMode(CORNER);
